@@ -1,0 +1,59 @@
+{
+  "name": "js-fp-workshop",
+  "version": "0.0.0",
+  "description": "Gigigo workshop",
+  "main": "index.js",
+  "dependencies": {
+    "module-alias": "^2.0.1"
+  },
+  "devDependencies": {
+    "conventional-changelog-cli": "^1.3.4",
+    "chai": "^4.1.2",
+    "coveralls": "^3.0.0",
+    "eslint-config-prettier": "^2.4.0",
+    "eslint-config-xo": "^0.18.2",
+    "eslint-plugin-prettier": "^2.2.0",
+    "http-server": "^0.9.0",
+    "husky": "^0.14.3",
+    "lint-staged": "^4.2.1",
+    "mocha": "^4.0.1",
+    "nyc": "^11.0.2",
+    "nsp": "^2.6.3",
+    "prettier": "^1.7.0",
+    "standard": "^10.0.3",
+    "validate-commit": "^3.2.1"
+  },
+  "scripts": {
+    "changelog":
+      "conventional-changelog -p eslint -i CHANGELOG.md -s -r 0 && git add CHANGELOG.md",
+    "commitmsg": "validate-commit-msg -p eslint",
+    "lint": "eslint */**/*.js -f html -o ./test/reports/linter/index.html",
+    "test":
+      "nyc --reporter=lcov --report-dir=test/reports/coverage --temp-directory=test/reports/coverage node test/index.js",
+    "make:publish": "bin/publish.sh",
+    "prepublish": "nsp check",
+    "pretest": "eslint .",
+    "precommit": "lint-staged",
+    "serve:coverage": "http-server test/reports/coverage/ -o",
+    "serve:linter": "http-server test/report/linter -o"
+  },
+  "lint-staged": {
+    "*.js": ["eslint --fix", "git add"],
+    "*.json": ["prettier --write", "git add"]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/madoos/js-fp-workshop"
+  },
+  "author": {
+    "name": "Maurice Domínguez",
+    "email": "maurice.ronet.dominguez@gmail.com",
+    "url": "https://github.com/madoos"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/madoos/js-fp-workshop/issues"
+  },
+  "homepage": "https://github.com/madoos/js-fp-workshop#readme",
+  "keywords": ["workshop"]
+}
