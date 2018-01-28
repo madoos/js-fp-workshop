@@ -25,13 +25,9 @@ const filterWith30DaysAgo = filter(postsWith30DaysAgo)
 // COMPOSITION
 
 const filterWith30DaysAgo2 = pipe(
-  tap(debug('Selection criteria')),
   gte,
-  tap(debug('generate comparator')),
   useWith([get('published')]),
-  tap(debug('generate comparator for objects with prop published')),
-  filter,
-  tap(debug('Transform predicate to filter to N(FUNCTOR)'))
+  filter
 )(_30DaysAgo)
 
 module.exports = filterWith30DaysAgo
