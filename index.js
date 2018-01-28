@@ -2,8 +2,6 @@
 
 const { mapObject, pipe, tap, curry, get } = require('./src/core')
 
-const posts = require('./src/posts')
-
 const debug = curry((tag, arg) => {
   console.log(tag, arg)
 })
