@@ -1,4 +1,4 @@
-'use trict'
+'use strict'
 
 const { expect } = require('chai')
 const posts = require('../src/posts')
