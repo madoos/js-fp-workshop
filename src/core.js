@@ -77,12 +77,27 @@ const mapObject = (fn, obj) => {
   }, {})
 }
 
+const comparator = (fn) => {
+  return (a, b) => {
+    return fn(a, b) ? -1
+      : fn(b, a) ? 1
+      : 0
+  }
+}
+
+const sort = (fn, list) => {
+  return [].concat(list).sort(fn)
+}
+
+const lt = (a, b) => a < b
+
 module.exports = {
   curry,
   useWith: curry(useWith),
   filter: curry(filter),
   get: curry(get),
   gte: curry(gte),
+  lt: curry(lt),
   pipe,
   tap: curry(tap),
   group: curry(group),
@@ -90,5 +105,7 @@ module.exports = {
   flatMap: curry(flatMap),
   flatten,
   cartesian,
-  mapObject: curry(mapObject)
+  mapObject: curry(mapObject),
+  comparator,
+  sort: curry(sort)
 }

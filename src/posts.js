@@ -3,17 +3,6 @@
 const getTsFor = (date) => (new Date(date)).getTime()
 
 module.exports = [{
-  'id': 1,
-  'title': 'Currying Things',
-  'author': 'Dave',
-  'selfurl': '/posts/1',
-  'published': getTsFor('2017-05-01'),
-  'tags': [
-    'functional programming'
-  ],
-  'displayDate': '2017-05-01'
-},
-{
   'id': 2,
   'title': 'ES6 Promises',
   'author': 'Kurt',
@@ -24,6 +13,17 @@ module.exports = [{
     'promises'
   ],
   'displayDate': '2017-05-02'
+},
+{
+  'id': 1,
+  'title': 'Currying Things',
+  'author': 'Dave',
+  'selfurl': '/posts/1',
+  'published': getTsFor('2017-05-01'),
+  'tags': [
+    'functional programming'
+  ],
+  'displayDate': '2017-05-01'
 },
 {
   'id': 3,
