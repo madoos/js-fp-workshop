@@ -30,10 +30,7 @@
     "lint": "eslint */**/*.js -f html -o ./test/reports/linter/index.html",
     "test":
       "nyc --reporter=lcov --report-dir=test/reports/coverage --temp-directory=test/reports/coverage node test/index.js",
-    "make:publish": "bin/publish.sh",
     "prepublish": "nsp check",
-    "pretest": "eslint .",
-    "precommit": "lint-staged",
     "serve:coverage": "http-server test/reports/coverage/ -o",
     "serve:linter": "http-server test/report/linter -o"
   },

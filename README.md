@@ -1,42 +1,21 @@
-[![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url] [![Coverage percentage][coveralls-image]][coveralls-url]
-
 # js-fp-workshop
 
 _Gigigo workshop_
 
-## Getting Started
+## Topics
 
-To install:
+High order functions(arity, pointfree style, curry)
+referentional transparency
+Avoid side efects(inmutability)
+Composition
 
-    npm i --save js-fp-workshop
 
-In your project:
+encapsulation
+inheritance,
+polymorphism
 
-``` javascript
- // => Example
-```
 
-## Publish
-
-_Execute the command `npm run make:publish`. If UPDATE_GIT_BRANCHES is 'true' branches `develop` and `master` will be update in remote and local repo._
-
-```bash
-
-npm run make:publish <VERSION> <UPDATE_GIT_BRANCHES>
-
-# Example: npm run make:publish 1.0.0 true
-```
-
-## License
-
-MIT © [Maurice Domínguez](maurice.ronet.dominguez@gmail.com)
-
-[npm-image]: https://badge.fury.io/js/js-fp-workshop.svg
-[npm-url]: https://npmjs.org/package/js-fp-workshop
-[travis-image]: https://travis-ci.org/madoos/js-fp-workshop.svg?branch=develop
-[travis-url]: https://travis-ci.org/madoos/js-fp-workshop
-[daviddm-image]: https://david-dm.org/madoos/js-fp-workshop.svg?theme=shields.io
-[daviddm-url]: https://david-dm.org/madoos/js-fp-workshop
-[coveralls-image]: https://coveralls.io/repos/madoos/js-fp-workshop/badge.svg
-[coveralls-url]: https://coveralls.io/r/madoos/js-fp-workshop
-
+S (SRP) in FP a function creates ALWAYS the same output for the same arguments this is called referential transparency
+O (OCP) in FP there is a concept called algebraic data types, have a look how it relates to Class hierarchies and what problem both try to solve 1
+L (LSP) Liskov Substitution Principle is Contravariance 2
+D (DIP) in general functional programming achieves abstraction through function composition, there are also other mechanism with the help of category theory(for example monoid or functor), for "Dependency Injection" 3
