@@ -1,9 +1,9 @@
 'use strict'
 
 const { expect } = require('chai')
-const { get } = require('../src/core')
-const posts = require('../src/posts')
-const filterPostWith30DaysAgo = require('../src/filter-30-days-ago/imperative')
+const { get } = require('../../src/post-challenge/core')
+const posts = require('../../src/post-challenge/posts')
+const filterPostWith30DaysAgo = require('../../src/post-challenge/filter-30-days-ago/imperative')
 
 describe('filter-30-days-ago', function () {
   it('should get 8 posts with ids: 2, 1, 3, 4, 5, 6, 7, 8', function () {

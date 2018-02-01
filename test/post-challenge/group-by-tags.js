@@ -1,9 +1,9 @@
 'use strict'
 
 const { expect } = require('chai')
-const { get, mapObject, map } = require('../src/core')
-const posts = require('../src/posts')
-const groupByTags = require('../src/group-by-tag/imperative')
+const { get, mapObject, map } = require('../../src/post-challenge/core')
+const posts = require('../../src/post-challenge/posts')
+const groupByTags = require('../../src/post-challenge/group-by-tag/imperative')
 
 describe('group-by-tags', function () {
   it('should group all post by tag', function () {
