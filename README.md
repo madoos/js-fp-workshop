@@ -11,7 +11,7 @@ _Gigigo workshop_
 * Generate an open debate
 * Check how the FP is very related to the streams
 
-# workshop structure
+## Workshop structure
 
 * Core FP concepts in relation to OOP
 * List operations
