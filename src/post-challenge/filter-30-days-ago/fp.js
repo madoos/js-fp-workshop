@@ -8,7 +8,7 @@ const {
   pipe,
   tap,
   curry
-} = require('../core')
+} = require('../../core')
 
 const debug = curry((tag, arg) => console.log(tag, arg))
 

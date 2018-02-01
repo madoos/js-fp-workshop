@@ -50,7 +50,7 @@ const comparator = (fn) => {
   return (a, b) => {
     return fn(a, b) ? -1
       : fn(b, a) ? 1
-      : 0
+        : 0
   }
 }
 
@@ -59,6 +59,76 @@ const tap = (fn, arg) => {
   return arg
 }
 
+function * naturals () {
+  let i = 0
+  while (true) {
+    yield i++
+  }
+}
+
+function * take (gen, n) {
+  let i = 0
+  for (let value of gen) {
+    yield value
+    if (++i === n) break
+  }
+}
+
+function toArray (gen) {
+  return [...gen]
+}
+
+function reduce (fn, initial) {
+  return (arr) => arr.reduce(fn, initial)
+}
+
+// /////////////////////// streams ///////////////////////////////////////////
+
+const { Readable, Transform } = require('stream')
+
+function generatorInstanceToStream (gen) {
+  return new Readable({
+    objectMode: true,
+    writableObjectMode: true,
+    readableMode: true,
+    read () {
+      try {
+        const iterator = gen.next()
+        !iterator.done ? this.push(iterator.value) : this.push(null)
+      } catch (e) {
+        this.emit('error', e)
+      }
+    }
+  })
+}
+
+function mapStream (fn) {
+  return new Transform({
+    objectMode: true,
+    writableObjectMode: true,
+    readableMode: true,
+    transform: function (data, enc, done) {
+      const res = fn(data, enc)
+
+      return (res.then)
+        ? res.then((_data) => done(null, _data)).catch(done)
+        : done(null, res)
+    }
+  })
+}
+
+function _await (fn, time) {
+  return function (...args) {
+    return new Promise((resolve) => {
+      const data = fn(...args)
+      setTimeout(() => resolve(data), time)
+    })
+  }
+}
+
+function identity (data) {
+  return data
+}
 module.exports = {
   sort: curry(sort),
   useWith: curry(useWith),
@@ -74,5 +144,13 @@ module.exports = {
   mapObject: curry(mapObject),
   comparator,
   curry,
-  pipe
+  pipe,
+  naturals,
+  take: curry(take),
+  toArray,
+  reduce,
+  generatorInstanceToStream,
+  mapStream,
+  _await,
+  identity
 }

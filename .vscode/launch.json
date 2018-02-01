@@ -8,8 +8,20 @@
         {
             "type": "node",
             "request": "launch",
-            "name": "Filter posts",
-            "program": "${workspaceFolder}/index.js"
-        }
+            "name": "posts challenge",
+            "program": "${workspaceFolder}/src/post-challenge/index.js"
+        },
+        {
+          "type": "node",
+          "request": "launch",
+          "name": "numbers challenge",
+          "program": "${workspaceFolder}/src/numbers-challenge/index.js"
+        },
+        {
+          "type": "node",
+          "request": "launch",
+          "name": "async numbers challenge",
+          "program": "${workspaceFolder}/src/async-numbers-challenge/index.js"
+      }
     ]
 }

@@ -1,6 +1,6 @@
 'use strict'
 
-const { mapObject, pipe, tap, curry, get } = require('./core')
+const { mapObject, pipe, tap, curry, get } = require('../core')
 
 const debug = curry((tag, arg) => {
   console.log(tag, arg)

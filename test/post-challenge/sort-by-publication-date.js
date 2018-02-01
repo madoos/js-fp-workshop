@@ -1,7 +1,7 @@
 'use strict'
 
 const { expect } = require('chai')
-const { get } = require('../../src/post-challenge/core')
+const { get } = require('../../src/core')
 const posts = require('../../src/post-challenge/posts')
 const sortAscendingByDate = require('../../src/post-challenge/sort-by-publication-date-ascending/imperative')
 

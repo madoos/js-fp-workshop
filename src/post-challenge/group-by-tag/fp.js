@@ -10,7 +10,7 @@ const {
   curry,
   flatten,
   mapObject
-} = require('../core')
+} = require('../../core')
 
 const debug = curry((tag, arg) => {
   console.log(tag, arg)
