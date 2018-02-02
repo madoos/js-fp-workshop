@@ -55,3 +55,12 @@ _Gigigo workshop_
 * encapsulation
 * inheritance
 * polymorphism
+
+## References
+
+* [mostly-adequate-guide](https://github.com/MostlyAdequate/mostly-adequate-guide)
+* [Functional-Light](https://github.com/getify/Functional-Light-JS)
+* [Functional JavaScript Introducing Functional Programming with UnderscoreJS ](https://github.com/transidai1705/javascript-ebooks/blob/master/%5BFunctional%20JavaScript%20Introducing%20Functional%20Programming%20with%20UnderscoreJS%201st%20Edition%20by%20Michael%20Fogus%20-%202013%5D.pdf)
+* [Abismo de null](https://elabismodenull.wordpress.com/category/programacion-funcional/)
+* [Programming-in-JavaScrip](http://pepa.holla.cz/wp-content/uploads/2016/08/Functional-Programming-in-JavaScript.pdf)
+* [beginning-functional-javascript](http://www.allitebooks.com/beginning-functional-javascript/)
